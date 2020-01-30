@@ -26,3 +26,5 @@ addons:
   apt:
     packages:
       ant
+before_install:
+ - chmod +x gradlew
