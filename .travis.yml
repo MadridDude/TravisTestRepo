@@ -11,8 +11,9 @@ android:
     - build-tools-26.0.2
 
     # The SDK version used to compile your project
-    - android-26
-    - android-17
+    #- android-26
+    #- android-17
+    - android-21
 
     # Additional components
     - extra-google-google_play_services
@@ -21,8 +22,9 @@ android:
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
-    - sys-img-x86-android-26
-    - sys-img-armeabi-v7a-android-17
+    #- sys-img-x86-android-26
+    #- sys-img-armeabi-v7a-android-17
+    - sys-img-x86-android-21
 #addons:
 #  apt:
 #    packages:
@@ -31,7 +33,7 @@ before_install:
  - chmod +x gradlew
  
 before_script:
-- echo no | android create avd --force -n test -t android-26 --abi default/x86 -c 100M
+- echo no | android create avd --force -n test -t android-21 --abi x86
 - emulator -avd test -memory 1500 -no-accel -gpu swiftshader -camera-back none -camera-front none -no-boot-anim -no-snapshot-save -no-snapstorage
-- android-wait-for-emulator
-- adb shell input keyevent 82 &
+#- android-wait-for-emulator
+#- adb shell input keyevent 82 &
