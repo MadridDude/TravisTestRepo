@@ -1,7 +1,11 @@
+# android language has to be specified for android projects although we will be using java
 language: android
+
+# jdk to be used is specified
 jdk: oraclejdk8
 sudo: false
 
+# specify components/tools for the android emulation
 android:
   components:
     - platform-tools
@@ -20,6 +24,7 @@ before_script:
   - adb shell input keyevent 82 &
 
 script: ./gradlew connectedAndroidTest
-before_install:
- - chmod +x gradlew
+
+#before_install:
+ #- chmod +x gradlew
  
