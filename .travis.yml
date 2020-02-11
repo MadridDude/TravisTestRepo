@@ -34,6 +34,22 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - $HOME/.android/build-cache
+    
+ # blocklist - Exlude branches from being built with TravisCI on commits
+#branches:
+#  except:
+#  - legacy
+#  - experimental
+
+# safelist - Include the only branches that should be built with TravisCI on commit
+# The safelist takes precedence over the block list if using both
+#branches:
+#  only:
+#  - master
+#  - stable
+# Regular expressions may be used to specify branches on these lists
+#  - /^deploy-.*$/ 
+
 # making sure that the VM had access to the gradlew file
 #before_install:
  #- chmod +x gradlew
