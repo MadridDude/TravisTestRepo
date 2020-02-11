@@ -13,7 +13,6 @@ android:
     - tools
     - build-tools-24.0.2
     - android-22
-    - android-24
     - sys-img-armeabi-v7a-android-22
     - extra-android-m2repository
 
@@ -22,8 +21,9 @@ before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
   - emulator -avd test -no-audio -no-window &
   - android-wait-for-emulator
+  # provides input to get passed android lock screen
   - adb shell input keyevent 82 &
-
+  
 script: ./gradlew connectedAndroidTest
 
 before_cache:
